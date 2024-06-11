@@ -1,0 +1,121 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form th:action="'/register_submit'" method="post" th:object="${registerUser}">
+        <table>
+            <tr>
+                <td> UserName</td>
+                <td><input type="input" name="username" th:field="*{username}"></td>
+            </tr>
+            <tr>
+                <td> Password</td>
+                <td><input type="input" name="password" th:field="*{password}"></td>
+            </tr>
+            <tr>
+                <td> Email</td>
+                <td><input type="input" name="email" th:field="*{email}"></td>
+            </tr>
+        </table>
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 500px;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .form-group {
+            position: relative;
+        }
+        .form-group i {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 1.1rem;
+            padding-top: 30px;
+        }
+        .form-control {
+            padding-left: 2.5rem;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+        .alert {
+            display: none;
+            animation: fadeInAlert 0.5s ease-in-out;
+        }
+        @keyframes fadeInAlert {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .form-text {
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 class="text-center">Register</h2>
+    <form th:action="'/register_submit'" method="post" th:object="${registerUser}">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <i class="fa fa-user"></i>
+            <input type="text" name="username" th:field="*{username}" class="form-control" placeholder="Enter your username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <i class="fa fa-lock"></i>
+            <input type="password" name="password" th:field="*{password}" class="form-control" placeholder="Enter your password" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <i class="fa fa-envelope"></i>
+            <input type="email" name="email" th:field="*{email}" class="form-control" placeholder="Enter your email" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Register</button>
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
